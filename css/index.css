@@ -1,0 +1,56 @@
+body{
+    background-color: #f6f9fc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+canvas{
+    width: 700px;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(82, 82, 104, 0.11), 0 1px 3px rgb(73, 73, 73) ;
+}
+.controls{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.controlls__btns{
+    margin-bottom: 30px;
+}
+button{
+    all: unset;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 5px 0px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 2.5px solid #cccc;
+    color: #666;
+    font-weight: 700;
+    font-size: 12px;
+    box-shadow: 0 4px 6px rgba(82, 82, 104, 0.11), 0 1px 3px rgb(73, 73, 73) ;
+}
+button:active{
+    transform: scale(0.98);
+}
+.controls__colors{
+    display: flex;
+    margin-bottom: 100px;
+}
+.controls__color{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(82, 82, 104, 0.11), 0 1px 3px rgb(73, 73, 73) ;
+}
+.controls__range{
+    margin-bottom: 30px;
+}
