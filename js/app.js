@@ -30,7 +30,7 @@ function onMouseMove(event){
     const x = event.offsetX;
     const y = event.offsetY;
     if(!painting){ // 마우스를 움직이는 내내 만들어짐
-        ctx.beginPath(); //클릭하지 않고 마우스를 움직였을 때는 path(선)를 시작
+        ctx.beginPath(); //클릭하지 않고 마우스를 움직였을 때는 path(선)를 시작 -> 하지 않으면 클릭해서 선이 보여졌을 때 그냥 계속 이어져서 나옴
         ctx.moveTo(x,y); // 마우스를 x,y좌표로 선이 만들어질 수 있게 한다고 보면 됨.
     }else{
         ctx.lineTo(x,y); // 마지막 지점을 특정 좌표로 연결
@@ -71,7 +71,8 @@ function handleCM(event){
 }
 
 function handleSaveClick(){
-    const image = canvas.toDataURL();
+    // 저장버튼
+    const image = canvas.toDataURL();  //url 로 이미지를 가져다줌. (기본 설정이png)
     const link = document.createElement("a");
     link.href = image;
     link.download = "PaintJs[🎨]";
@@ -84,23 +85,26 @@ if(canvas){
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
-    canvas.addEventListener("mouseleave", stopPainting);
     canvas.addEventListener("click", handleCanvasClick);
     canvas.addEventListener("contextmenu", handleCM);
     
 }
 
+//클릭한 색상을 받아오는 것
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
 
-
+// 붓의 크기 조절
 if(range){
     range.addEventListener("input", handleRangeChange);
 }
 
+//버튼의 텍스트 변경
 if(mode){
     mode.addEventListener("click", handleModeClick);
 }
 
+
+//버튼 눌렀을 때 저장 될 수 있게
 if(saveBtn){
     saveBtn.addEventListener("click", handleSaveClick);
 }
