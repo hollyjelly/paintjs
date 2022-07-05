@@ -10,13 +10,16 @@ const canvas_size = 700;
 let painting = false;
 let filling = false;
 
+// 캔버스
 canvas.width = canvas_size;
 canvas.height = canvas_size; // css 뿐만 아니라 픽셀이 움직일 수있는 공간을 지정해줘야함.
 ctx.fillStyle = "white";
-ctx.fillRect(0, 0, canvas_size, canvas_size)
+//선
 ctx.strokeStyle = initial_color; //선 색상
-ctx.fillStyle =  initial_color; // 네모에 채워지는 색상
 ctx.lineWidth = 2.5; // 선 크기?를 중간 사이즈로 줌 (최소 0.1에서 최대 5);
+//네모
+ctx.fillRect(0, 0, canvas_size, canvas_size)
+ctx.fillStyle =  initial_color; // 네모에 채워지는 색상
 
 function startPainting(){
     painting = true;
